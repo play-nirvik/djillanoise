@@ -1,0 +1,56 @@
+/*  GARYVAYNERCHUK.COM CUSTOM ON-THE-FLY STYLESHEET */
+
+.reviewmock {
+  display: inline;
+  margin: 10px;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .reviewmock {
+    display: inline-block;
+    padding: 10px;
+    width: 600px;
+    height: auto;
+  }
+
+
+.podcastbtn {
+  display: block;
+  margin: 5px;
+  width: 80%;
+  height: auto;
+}
+
+.podcastbtn:hover {
+  opacity: 0.8;
+  color: #000;
+}
+
+@media (min-width: 640px) {
+  .podcastbtn {
+    display: inline;
+    margin: 5px;
+    height: 50px;
+    width: auto;
+  }
+}
+
+.snapgif {
+  display: inline;
+  margin: 5px;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 640px) {
+  .snapgif {
+    display: inline-block;
+    margin: 0px;
+    width: 400px;
+    height: 400px;
+  }
+}
