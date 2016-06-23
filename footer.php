@@ -91,6 +91,20 @@
                 </div>
             </div>
         </div>
+        
+        <div id="gv-search" class="gv-overlay gv-overlay-white">
+            <div class="container">
+                <a href="#gv-search|modal-close" class="gv-close gv-close-gray gv-modal-ctrl">×</a>
+                <div class="search-form clearfix">
+                    <form class="search" method="get" action="<?php echo site_url(); ?>" role="search">
+                        <button class="gv-btn gv-btn-white search-submit" type="submit" role="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <input class="search-input" type="search" name="s" placeholder="Type Here">
+                    </form>
+                </div>
+            </div>
+        </div>
 
     </div> <!-- end .gv-body-wrapper -->
 <?php wp_footer(); ?>

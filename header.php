@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +20,14 @@
 	<?php endif; ?>
 	<?php wp_head(); ?>
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' id='garyvee-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/style.css?ver=1.0' media='all' />
+    
 </head>
 
 <body <?php body_class(); ?>>
 <div class="gv-body-wrapper">
     <div id="gv-main-nav" class="gv-nav-wrapper">
-    <div class="gv-nav-inner">
-            <div id="cta-firsttime" class="gv-cta-first">
-            <a href="https://www.garyvaynerchuk.com/first-time-here/"><img src="https://www.garyvaynerchuk.com/wp-content/themes/garysixteen/assets/img/logo-firsttime.svg"></a>
-        </div>
+        <div class="gv-nav-inner">
+            
             <div class="row">
             <div class="gv-nav-mobile">
                 <button class="gv-nav-toggle">

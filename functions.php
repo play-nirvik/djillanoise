@@ -86,4 +86,15 @@ function djillanoise_theme_setup() {
 endif; // djillanoise_theme_setup
 add_action( 'after_setup_theme', 'djillanoise_theme_setup' );
 
+
+/**
+ * Enqueue and register frontend script and styles
+ */
+function enqueue_djillanoise_scripts_styles() {
+    wp_enqueue_style( 'djillanoise', get_stylesheet_uri() );
+    wp_enqueue_script( 'frontend', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_djillanoise_scripts_styles' );
+
+
 ?>
