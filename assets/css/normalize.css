@@ -290,8 +290,8 @@ h1,
 h2,
 .h1,
 .h2 {
-  font-family: "Knockout 70 A", "Knockout 70 B", "Knockout 50 A", "Knockout 50 B", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 h1.hf-welter,
 h2.hf-welter,
@@ -353,7 +353,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 38pt;
+  font-size: 32pt;
   line-height: 30pt;
 }
 @media (max-width: 567px) {
@@ -714,7 +714,7 @@ abbr[title] {
   text-transform: uppercase;
 }
 blockquote {
-  font-family: "Knockout 70 A", "Knockout 70 B", "Knockout 50 A", "Knockout 50 B", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 10px 10px;
   margin: 0 0 20px;
   font-size: 30pt;

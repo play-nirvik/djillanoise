@@ -189,6 +189,7 @@
 }
 .gv-quote-style {
   font-size: inherit;
+  font-weight: 700;
   line-height: inherit;
   margin: 0;
 }
@@ -519,7 +520,7 @@
 }
 @media (min-width: 1300px) {
   .gv-billboard-callout-inner {
-    font-size: 46pt;
+    font-size: 36pt;
     line-height: 40pt;
   }
 }
@@ -1585,8 +1586,8 @@ a.hover-social.sp-snapchat-square:focus {
   line-height: 1em;
 }
 .gv-mark-type {
-  font-family: "Knockout 50 A", "Knockout 50 B", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   font-style: normal;
   display: inline-block;
   vertical-align: middle;
