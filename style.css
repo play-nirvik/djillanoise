@@ -12,3 +12,13 @@ Text Domain: djillanoise
 @import url('assets/css/bootstrap.css');
 @import url('assets/css/font-awesome.css');
 @import url('assets/css/garyvee.css');
+
+
+.mappr-logo-item img {
+    width: 300px;
+}
+
+.gv-mixcloud-sect {
+    padding: 20px 0;
+    text-align: center;
+}

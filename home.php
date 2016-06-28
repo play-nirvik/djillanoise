@@ -25,7 +25,13 @@ get_header();
                     <div class="row">
                         <div class="gv-billboard-callout-inner">
                             <blockquote class="gv-quote-style">
-                                <?php echo ot_get_option('banner_quote'); ?>                                
+                                <?php echo ot_get_option('banner_quote'); ?>    
+                                <?php
+                                    $banner_signature = ot_get_option('banner_signature_graphic');
+                                    if(!empty($banner_signature)) {
+                                ?>    
+                                    <img src="<?php echo $banner_signature; ?>" class="gv-quote-sig">  
+                                <?php } ?>
                             </blockquote>
                         </div>
                     </div>
@@ -104,9 +110,16 @@ get_header();
                                 </div>
                             </form>
                         </div>
-                        <div class="gv-widget-standee">
-                            <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20160112164228/snap-me-2.png">
-                        </div>
+                        
+                        <?php
+                            $snapchat_image = ot_get_option('snapchat_image');
+                            if(!empty($snapchat_image)) {
+                        ?>    
+                            <div class="gv-widget-standee">
+                                <img src="<?php echo $snapchat_image; ?>">
+                            </div>  
+                        <?php } ?>
+                        
                     </div>
                 </div>
             </div>
@@ -116,37 +129,52 @@ get_header();
     <div id="gv-sect-mediaappr" class="gv-widget gv-widget-fulllength gv-widget-light">
         <div class="container">
             <h6 class="gv-h-sans-caps"><?php echo ot_get_option('featured_in_text'); ?></h6>
-            <a href="http://www.nytimes.com/2013/11/03/technology/riding-the-hashtag-in-social-media-marketing.html" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120171816/NYT-logo.png" class="img-responsive" style="min-width:290px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/iHeartMedia-08.0.0.jpg" class="img-responsive">
             </a>
-            <a href="http://www.forbes.com/sites/jimkeenan/2015/07/22/askgaryvee-changing-the-mentoring-game-for-young-entrepreneurs/" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120171924/Forbes-logo.png" class="img-responsive" style="min-width:100px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/macys-logo-transparent.jpg" class="img-responsive">
             </a>
-            <a href="http://fortune.com/40-under-40/2014/gary-vaynerchuk-40/" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172004/Fortune-logo.png" class="img-responsive" style="min-width:125px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/media-temple.jpg" class="img-responsive">
             </a>
-            <a href="http://www.inc.com/john-rampton/25-social-media-keynote-speakers-you-need-to-know.html" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172034/Inc-logo.png" class="img-responsive" style="min-width:105px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/Rockstar_energy_drink_logo.svg.png" class="img-responsive">
             </a>
-            <a href="http://www.entrepreneur.com/video/244087" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172106/Entrepreneur-logo.png" class="img-responsive" style="min-width:150px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/space-x.png" class="img-responsive">
             </a>
-            <a href="http://www.fastcompany.com/3042042/the-secret-behind-the-most-innovative-tweeters" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172142/Fast_Company-logo.png" class="img-responsive" style="min-width:140px;">
-            </a>
-            <a href="http://mashable.com/2015/02/17/john-legere-spoiled-ceos/#Xvhtq1XLfZqK" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172153/Mashable-logo.png" class="img-responsive" style="min-width:140px;">
-            </a>
-            <a href="http://www.wsj.com/articles/the-secret-to-a-perfect-six-second-video-1422244846?alg=y" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120172156/tWSJ-logo.png" class="img-responsive" style="min-width:300px;">
-            </a>
-            <a href="http://www.crainsnewyork.com/40under40/Vaynerchuk" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151120171733/Crains-logo.png" class="img-responsive" style="min-width:150px;max-width:-6px;">
-            </a>
-            <a href="http://www.success.com/profile/gary-vaynerchuk" class="mappr-logo-item" target="_blank">
-                <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20160401203939/SUCCESS_logo_black.png" class="img-responsive" style="min-width:150px;max-width:150px;">
+            <a href="#" class="mappr-logo-item" target="_blank">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/the standard.png" class="img-responsive">
             </a>
                            
+        </div>
+    </div>
+    
+    <div class="gv-mixcloud-sect">
+        <div class="container">
+            <?php
+                $mixcloud_header = ot_get_option('mixcloud_header');
+                if(!empty($mixcloud_header)) {
+            ?>    
+                <h2><?php echo $mixcloud_header; ?></h2> 
+            <?php } ?>
+            
+            <div class="row">
+                <?php 
+                    for($i = 1; $i <= 3; $i++) {
+                        $mixcloud_feed = ot_get_option('mixcloud_feed_' . $i);
+                        if(!empty($mixcloud_feed)) {
+                ?>
+                            <div class="col-md-4">
+                                <?php echo $mixcloud_feed; ?>
+                            </div>
+                <?php
+                        }
+                        $mixcloud_feed = '';
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </div>

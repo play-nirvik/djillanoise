@@ -29,28 +29,28 @@
         <div class="gv-nav-inner">
             
             <div class="row">
-            <div class="gv-nav-mobile">
-                <button class="gv-nav-toggle">
-                    <?php _e('Menu', 'djillanoise'); ?>
-                </button>
+                <div class="gv-nav-mobile">
+                        <button class="gv-nav-toggle">
+                            <?php _e('Menu', 'djillanoise'); ?>
+                        </button>
+                    </div>
+                    <div class="gv-mark-type">
+                        <a href="<?php echo site_url(); ?>" class="no-hover">
+                            <?php echo ot_get_option('logo_text'); ?>
+                        </a>
+                    </div>
+                    <div class="gv-nav-desktop">
+                        <nav class="gv-nav">
+                            <?php
+                                wp_nav_menu( array(
+                                    'menu' => 'Primary Menu'
+                                ) );
+                            ?>
+                        </nav>
+                    </div>
+                    <button data-href="#gv-search|modal-open" class="gv-search-toggle gv-modal-ctrl">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
             </div>
-            <div class="gv-mark-type">
-                <a href="<?php echo site_url(); ?>" class="no-hover">
-                    <?php echo ot_get_option('logo_text'); ?>
-                </a>
-            </div>
-            <div class="gv-nav-desktop">
-                <nav class="gv-nav">
-                    <?php
-                        wp_nav_menu( array(
-                            'menu' => 'Primary Menu'
-                        ) );
-                    ?>
-                </nav>
-            </div>
-            <button data-href="#gv-search|modal-open" class="gv-search-toggle gv-modal-ctrl">
-                <i class="fa fa-search"></i>
-            </button>
         </div>
-    </div>
-</div>
