@@ -22,3 +22,9 @@ Text Domain: djillanoise
     padding: 20px 0;
     text-align: center;
 }
+
+.mc4wp-response {
+    text-align: center;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+}

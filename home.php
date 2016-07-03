@@ -67,12 +67,9 @@ get_header();
         <div class="gv-widget clearfix">
             <div class="container"> 
                 <div class="row clearfix">
-                    <div class="gv-widget-mailinglist mobile gvmc-ctrl-nojs">
-                        <a href="http://eepurl.com/LY3M5" target="_blank" class="gv-btn gv-btn-red">Subscribe</a>
-                    </div>
                     <div class="gv-widget-mailinglist fullwidth desktop">
                         <div class="gv-widget-content">
-                            <form name="gv-mc-main-desktop">
+                            <form name="gv-mc-main-desktop" method="post">
                                 <h1><?php echo ot_get_option('subscription_header'); ?></h1>
                                 <h3 class="gv-h-serif"><?php echo ot_get_option('subscription_subheader'); ?></h3>
                                 <div class="gv-form">
@@ -80,33 +77,9 @@ get_header();
                                         <div class="col-xs-11 col-md-push-1">
                                             <div class="gv-widget-alert"><span class="message">Lorem Ipsum Dolor Test</span><a href="#alert:dismiss" class="gv-widget-ctrl close">×</a></div>                                        </div>
                                     </div>
-                                    <div class="gv-form-group">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-md-push-1">
-                                                <label for="mce-fname">
-                                                    Name
-                                                </label>
-                                            </div>
-                                            <div class="col-xs-4 col-md-push-1">
-                                                <label for="mce-email">
-                                                    Email
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="mc-field-group col-xs-4 col-md-push-1">
-                                                <input type="text" value="" name="fname" class="form-control" placeholder="Your Name Here">
-                                            </div>
-                                            <div class="mc-field-group col-xs-4 col-md-push-1">
-                                                <input type="email" value="" name="email" class="required email form-control" placeholder="youremail@example.com">
-                                            </div>
-                                            <div class="col-xs-3 col-md-push-1">
-                                                <div class="clear text-right">
-                                                    <button name="subscribe" class="gvmc-ctrl-subscribe gv-btn gv-btn-red gv-btn-block">Subscribe</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
+                                    <?php echo do_shortcode('[mc4wp_form id="18"]'); ?>
+                                    
                                 </div>
                             </form>
                         </div>

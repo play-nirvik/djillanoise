@@ -53,36 +53,16 @@
                     </div>
                 </div>                                          
             </div>
-                    <div class="col-sm-12 col-md-8 col-md-push-1">
-                                                           <div class="gv-widget-mailinglist horizontal">
-            <div class="gv-form">
-                <div class="gv-widget-alert"><span class="message">Lorem Ipsum Dolor Test</span><a href="#alert:dismiss" class="gv-widget-ctrl close">×</a></div>                <form name="gv-mc-horizontal">
-                    <div class="row">
-                        <h5 class="gv-h-slab gv-h-slab-normal text-center hidden-md hidden-lg ">
-                            Get all my best stuff in your inbox.                        </h5>
-                        <div class="col-sm-4 col-md-4">
-                            <div class="form-group mc-field-group">
-                                <label for="mce-fname">Name</label>
-                                <input type="text" value="" name="fname" class="form-control" placeholder="Your Name Here">
-                            </div>
-                        </div>
-                        <!-- <div class="clearfix visible-sm-block"></div> -->
-                        <div class="col-sm-4 col-md-4">
-                            <div class="form-group mc-field-group">
-                                <label for="mce-email">Email</label>
-                                <input type="email" value="" name="email" class="email form-control" placeholder="email@email.com" required="">
-                            </div>
-                        </div>
-                        <div class="col-xs-8 col-sm-4 col-xs-no-gutter keep-left col-md-4">
-                            <label>&nbsp;</label>
-                            <button name="subscribe" id="mc-embedded-subscribe" class=" gv-btn gv-btn-red gv-btn-block gvmc-ctrl-subscribe">Subscribe</button>
-                        </div>
+            <div class="col-sm-12 col-md-8 col-md-push-1">
+                <div class="gv-widget-mailinglist horizontal">
+                    <div class="gv-form">
+                        <form method="post" class="gv-mc-horizontal">
+                            <?php echo do_shortcode('[mc4wp_form id="18"]'); ?>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-                                                    </div>
-                </div>
                 <div class="row">
                     <div class="col-sm-8 col-md-6 gv-footer-fineprint">
                         <p>&copy; <?php echo ot_get_option('logo_text'); ?> 2016<br>

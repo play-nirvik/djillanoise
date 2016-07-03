@@ -370,8 +370,8 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 22pt;
-  line-height: 18pt;
+  font-size: 18pt;
+  line-height: 22pt;
 }
 h4,
 .h4 {
@@ -435,12 +435,12 @@ h6,
   font-weight: 400;
 }
 .gv-h-welter50 {
-  font-family: "Knockout 50 A", "Knockout 50 B", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 .gv-h-welter70 {
-  font-family: "Knockout 70 A", "Knockout 70 B", "Knockout 50 A", "Knockout 50 B", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 .gv-h-grey {
   color: #a7a7a7;

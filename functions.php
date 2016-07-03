@@ -28,6 +28,11 @@ add_filter( 'ot_header_version_text', 'change_ot_header_version_text' );
  */
 require( trailingslashit( get_template_directory() ) . 'includes/theme-options.php' );
 
+/**
+ * Meta Boxes
+ */
+require( trailingslashit( get_template_directory() ) . 'includes/meta-boxes.php' );
+
 
 if ( ! function_exists( 'djillanoise_theme_setup' ) ) :
 /**
@@ -96,5 +101,57 @@ function enqueue_djillanoise_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_djillanoise_scripts_styles' );
 
+/**
+ * Register Events Custom Post Type
+ */
+if( ! function_exists( 'event_create_post_type' ) ) {
+	function event_create_post_type() {
+		$labels = array(
+			'name' => 'Events',
+			'singular_name' => 'Event',
+			'add_new' => 'Add event',
+			'all_items' => 'All events',
+			'add_new_item' => 'Add event',
+			'edit_item' => 'Edit event',
+			'new_item' => 'New event',
+			'view_item' => 'View event',
+			'search_items' => 'Search events',
+			'not_found' => 'No events found',
+			'not_found_in_trash' => 'No events found in trash',
+			'parent_item_colon' => 'Parent event'
+		);
+		$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'has_archive' => true,
+			'publicly_queryable' => true,
+			'query_var' => true,
+			'rewrite' => true,
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			'supports' => array(
+				'title',
+				'revisions'
+			),
+			'menu_position' => 5,
+			'exclude_from_search' => false,
+			// 'register_meta_box_cb' => 'event_add_post_type_metabox'
+		);
+		register_post_type( 'event', $args );
+	}
+	add_action( 'init', 'event_create_post_type' );
+}
+
+// Change displayed format and returnd value
+// Defaults to yy-mm-dd
+// Not recommended but it's possible
+add_filter( 'ot_type_date_picker_date_format', 'dj_modify_date_picker_date_format', 10, 2 );
+function dj_modify_date_picker_date_format( $format, $field_id ) {
+    if( 'event_date_picker' == $field_id ) {
+        return 'M dd D';
+    }
+}
+
+add_filter( 'mc4wp_debug_log_level', function() { return 'debug'; } );
 
 ?>
