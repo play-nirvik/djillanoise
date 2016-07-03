@@ -57,7 +57,13 @@
                 <div class="gv-widget-mailinglist horizontal">
                     <div class="gv-form">
                         <form method="post" class="gv-mc-horizontal">
-                            <?php echo do_shortcode('[mc4wp_form id="18"]'); ?>
+                            <?php 
+                            $mailchimp_shortcode = ot_get_option('mailchimp_shortcode');
+                            
+                            if(!empty($mailchimp_shortcode))
+                                echo do_shortcode($mailchimp_shortcode); 
+                            
+                            ?>
                         </form>
                     </div>
                 </div>

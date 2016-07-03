@@ -78,7 +78,13 @@ get_header();
                                             <div class="gv-widget-alert"><span class="message">Lorem Ipsum Dolor Test</span><a href="#alert:dismiss" class="gv-widget-ctrl close">×</a></div>                                        </div>
                                     </div>
                                     
-                                    <?php echo do_shortcode('[mc4wp_form id="18"]'); ?>
+                                    <?php 
+                                    $mailchimp_shortcode = ot_get_option('mailchimp_shortcode');
+                                    
+                                    if(!empty($mailchimp_shortcode))
+                                        echo do_shortcode($mailchimp_shortcode); 
+                                    
+                                    ?>
                                     
                                 </div>
                             </form>
