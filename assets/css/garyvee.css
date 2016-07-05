@@ -2006,7 +2006,7 @@ a.hover-social.sp-snapchat-square:focus {
 }
 .gv-single-content .gv-liner {
   margin-top: 0;
-  font-size: 38pt;
+  font-size: 32pt;
   line-height: 32pt;
 }
 @media (min-width: 768px) {
@@ -2386,7 +2386,6 @@ a.hover-social.sp-snapchat-square:focus {
 .gv-post-comments {
   padding-top: 20px;
   padding-bottom: 0;
-  text-align: center;
 }
 .fb-comments-wrapper {
   display: block;
