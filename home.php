@@ -109,13 +109,13 @@ get_header();
         <div class="container">
             <h6 class="gv-h-sans-caps"><?php echo ot_get_option('featured_in_text'); ?></h6>
             <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/iHeartMedia-08.0.0.jpg" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/iHeartMedia-08.png" class="img-responsive">
             </a>
             <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/macys-logo-transparent.jpg" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/macys-logo-transparent.png" class="img-responsive">
             </a>
             <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/media-temple.jpg" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/media-temple.png" class="img-responsive">
             </a>
             <a href="#" class="mappr-logo-item" target="_blank">
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/Rockstar_energy_drink_logo.svg.png" class="img-responsive">
