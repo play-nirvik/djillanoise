@@ -69,3 +69,42 @@ ol.commentlist {
 .gv-single-wrapper.adjust-margin {
     margin-top: 0;
 }
+
+.gv-widget-mailinglist.sidebar .gv-form-group {
+    position: relative;
+    min-height: 230px;
+}
+
+.gv-widget-mailinglist.sidebar .col-xs-4.col-md-push-1 {
+    position: absolute;
+    left: -25px;
+    top: 0;
+    padding: 0;
+}
+
+.gv-widget-mailinglist.sidebar .col-xs-4.col-md-push-1:last-child {
+    top: 95px;
+}
+
+.gv-widget-mailinglist.sidebar .mc-field-group.col-xs-4.col-md-push-1 {
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 100%;
+}
+
+.gv-widget-mailinglist.sidebar .mc-field-group.col-xs-4.col-md-push-1:nth-child(2) {
+   top: 130px;
+}
+
+.gv-widget-articleunit .h2, 
+.gv-widget-articleunit h2 {
+    font-size: 28pt;
+    line-height: 24pt;
+}
+
+.gv-widget-mailinglist.sidebar .col-xs-3.col-md-push-1 {
+   position: absolute;
+    left: 48%;
+    top: 190px;
+}

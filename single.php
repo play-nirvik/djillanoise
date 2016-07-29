@@ -23,7 +23,7 @@ while ( have_posts() ) : the_post();
         <div class="gv-single-wrapper <?php echo (!has_post_thumbnail()) ? 'adjust-margin' : '';  ?>">
             <div class="container">
                 <div class="row">
-                    <div class="gv-single-content col-md-12">
+                    <div class="gv-single-content col-md-8">
                         <h1 class="gv-ctrl-title gv-liner">
                             <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a>
                         </h1>
@@ -74,6 +74,9 @@ while ( have_posts() ) : the_post();
                             
                         </div>
                     </div>
+                    
+                    <?php get_template_part( 'includes/content', 'sidebar' ); ?>
+                    
                 </div>
             </div>
         </div>

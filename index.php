@@ -12,14 +12,15 @@ global $wp_query;
 		<div class="container">
 
 		<?php if ( have_posts() ) : ?>
+		<div class="row">
+		    <div class="col-md-8">
 
 			<?php
 			
 			// Start the loop.
 			while ( have_posts() ) : the_post(); ?>
 
-				<div class="row">
-				    <div class="col-md-12">
+				
 				        <article id="post-<?php the_ID(); ?>" <?php post_class('gv-post'); ?>>
 				            <?php if ( has_post_thumbnail() ) { ?>
 				            <div class="gv-post-img">
@@ -46,8 +47,7 @@ global $wp_query;
                                 </div>
                             </div>
 				        </article>
-				    </div>
-				</div>
+				    
             
             <?php
 			// End the loop.
@@ -62,6 +62,11 @@ global $wp_query;
 
 		endif;
 		?>
+				</div>
+				
+				<?php get_template_part( 'includes/content', 'sidebar' ); ?>
+				
+			</div>
 
 		</div>
 	</div>
