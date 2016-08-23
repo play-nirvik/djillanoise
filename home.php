@@ -105,30 +105,90 @@ get_header();
         </div>
     </div>
     
+    <?php
+        $blog_section_1 = ot_get_option('blog_section_1');
+        $post_1 = get_post($blog_section_1);
+        if(!empty($post_1)) {
+    ?>
+        <section class="gv-section">
+            <div class="container">
+                <div class="gv-col-module col-md-6">
+                    <h1 class="gv-liner"><?php echo $post_1->post_title; ?></h1>
+                    <p><?php echo $post_1->post_content; ?></p>
+                    <div class="gv-section-footer text-right">
+                        <a href="<?php echo esc_url( get_permalink($post_1->ID) ); ?>" class="link-blue link-bold">Read My Story &gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="gv-col-module col-md-6">
+                    <?php if ( has_post_thumbnail( $post_1->ID ) ) { ?>
+                    <div class="gv-billboard gv-billboard-white gv-billboard-small">
+                        <div class="gv-billboard-header text-right">
+                            <h4 class="h3 gv-h-welter50">Read This</h4>
+                        </div>
+                        <div class="gv-billboard-poster">
+                            <?php echo get_the_post_thumbnail( $post_1->ID, 'medium' ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+            
+        </section>
+    <?php } ?>
+    
     <div id="gv-sect-mediaappr" class="gv-widget gv-widget-fulllength gv-widget-light">
         <div class="container">
             <h6 class="gv-h-sans-caps"><?php echo ot_get_option('featured_in_text'); ?></h6>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/iHeartMedia-08.png" class="img-responsive">
-            </a>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/macys-logo-transparent.png" class="img-responsive">
-            </a>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/media-temple.png" class="img-responsive">
-            </a>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/Rockstar_energy_drink_logo.svg.png" class="img-responsive">
-            </a>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/space-x.png" class="img-responsive">
-            </a>
-            <a href="#" class="mappr-logo-item" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/featured/the standard.png" class="img-responsive">
-            </a>
-                           
+            <?php
+                $featured_in_images = ot_get_option('featured_in_images');
+                if(!empty($featured_in_images)) {
+                    $image_array = explode(',', $featured_in_images);
+                    foreach ($image_array as $value) {
+            ?> 
+                    <a href="#" class="mappr-logo-item" target="_blank">
+                        <img src="<?php echo $value; ?>" class="img-responsive">
+                    </a>
+            <?php
+                    }
+                }
+            ?>
         </div>
     </div>
+    
+    <?php
+        $blog_section_2 = ot_get_option('blog_section_2');
+        $post_2 = get_post($blog_section_2);
+        if(!empty($post_2)) {
+    ?>
+        <div id="gv-sect-blog" class="gv-section">
+            <div class="container">
+                <h4 class="h3 gv-h-welter50">Read This</h4>
+                <div class="row">
+                    <div class="col-sm-6 col-md-8">
+                        <?php if ( has_post_thumbnail( $post_2->ID ) ) { ?>
+                            <div class="gv-post-img">
+                                <a href="<?php echo esc_url( get_permalink($post_2->ID) ); ?>">
+                                    <?php echo get_the_post_thumbnail( $post_2->ID, 'full' ); ?>
+                                </a>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <h1 class="gv-liner-simple">
+                            <a href="<?php echo esc_url( get_permalink($post_2->ID) ); ?>"><?php echo $post_2->post_title; ?></a>
+                        </h1>
+                        <h5 class="gv-h-slab gv-post-date">
+                            <?php echo get_the_date( 'F j, Y', $post_2->ID ); ?> 
+                        </h5>
+                        <p><?php echo $post_2->post_content; ?></p>
+                        <div class="text-right">
+                            <a href="<?php echo esc_url( get_permalink($post_2->ID) ); ?>" class="gv-post-permalink link-blue">Read More &gt;&gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     
     <div class="gv-mixcloud-sect">
         <div class="container">
@@ -153,6 +213,71 @@ get_header();
                         $mixcloud_feed = '';
                     }
                 ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gv-sect-events" class="gv-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="clearfix"></div>
+                <div class="gv-widget gv-widget-events theme-white">
+                    <h3 class="gv-h-welter50">
+                        Upcoming Events
+                    </h3>
+                    
+                    <div class="event-listing">
+                        <?php
+                        $args = array(
+                            'numberposts'=> 3,            // should show 5 but only shows 3
+                            'post_type'=>'event',         // posts only
+                        );    
+                        $events = get_posts($args);
+                        
+                        if(!empty($events)) {
+                            foreach($events as $event) {
+                                $event_venue = get_post_meta($event->ID, 'event_venue', true);
+                                $event_link = get_post_meta($event->ID, 'event_link', true);
+                                $event_link = (empty($event_link)) ? '#' : $event_link;
+                                $event_date = get_post_meta($event->ID, 'event_date_picker', true);
+                                $event_date_array = explode(' ', $event_date);
+                        ?>
+                        <div class="clearfix event event-3-col">
+                            <div class="widget-event-date text-center">
+                                <div class="h3 gv-h-welter50"><?php echo $event_date_array[0]; ?></div>
+                                <div class="h2 gv-h-welter50"><?php echo $event_date_array[1]; ?></div>
+                            </div>
+                            <div class="widget-event-title">
+                                <h3 class="event-title"><?php echo $event->post_title; ?></h3>
+                                <h4 class="event-location"><?php echo $event_venue; ?></h4>
+                            </div>
+                            <div class="widget-event-info">
+                                <a href="<?php echo $event_link; ?>" target="_blank" class="gv-btn gv-btn-blue gv-btn-block">Info</a>
+                            </div>
+                        </div>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </div>
+                    <div class="event-widget-footer text-right">
+                        <a href="<?php echo site_url(); ?>/events" class="link-blue link-bold">See all events &gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="col-md-6 col-md-push-1">
+                <?php
+                    $contact_form_header = ot_get_option('contact_form_header');
+                    if(!empty($contact_form_header)) {
+                ?>    
+                    <h3 class="h1 gv-liner-simple"><?php echo $contact_form_header; ?></h3> 
+                <?php } ?>
+                <div id="gform_widget-2" class="gform_widget">
+                    <?php echo do_shortcode('[contact-form-7 id="1708" title="GET IN TOUCH"]'); ?>
+                </div>
             </div>
         </div>
     </div>

@@ -108,3 +108,17 @@ ol.commentlist {
     left: 48%;
     top: 190px;
 }
+
+.gform_footer.top_label {
+    position: relative;
+}
+
+div.wpcf7 img.ajax-loader {
+    position: absolute;
+    right: 130px;
+    top: 10px;
+}
+
+#gv-sect-events h3.gv-h-welter50 {
+    font-weight: bold;
+}
