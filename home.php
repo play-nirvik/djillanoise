@@ -114,7 +114,7 @@ get_header();
             <div class="container">
                 <div class="gv-col-module col-md-6">
                     <h1 class="gv-liner"><?php echo $post_1->post_title; ?></h1>
-                    <p><?php echo $post_1->post_content; ?></p>
+                    <p><?php echo pd_get_excerpt_from_content($post_1->ID); ?></p>
                     <div class="gv-section-footer text-right">
                         <a href="<?php echo esc_url( get_permalink($post_1->ID) ); ?>" class="link-blue link-bold">Read My Story &gt;&gt;</a>
                     </div>
@@ -180,7 +180,7 @@ get_header();
                         <h5 class="gv-h-slab gv-post-date">
                             <?php echo get_the_date( 'F j, Y', $post_2->ID ); ?> 
                         </h5>
-                        <p><?php echo $post_2->post_content; ?></p>
+                        <p><?php echo pd_get_excerpt_from_content($post_2->ID); ?></p>
                         <div class="text-right">
                             <a href="<?php echo esc_url( get_permalink($post_2->ID) ); ?>" class="gv-post-permalink link-blue">Read More &gt;&gt;</a>
                         </div>
@@ -271,12 +271,13 @@ get_header();
             <div class="col-md-6 col-md-push-1">
                 <?php
                     $contact_form_header = ot_get_option('contact_form_header');
+                    $contact_form_shortcode = ot_get_option('contact_form_shortcode');
                     if(!empty($contact_form_header)) {
                 ?>    
                     <h3 class="h1 gv-liner-simple"><?php echo $contact_form_header; ?></h3> 
                 <?php } ?>
                 <div id="gform_widget-2" class="gform_widget">
-                    <?php echo do_shortcode('[contact-form-7 id="1708" title="GET IN TOUCH"]'); ?>
+                    <?php echo do_shortcode($contact_form_shortcode); ?>
                 </div>
             </div>
         </div>

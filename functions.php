@@ -154,4 +154,20 @@ function dj_modify_date_picker_date_format( $format, $field_id ) {
 
 add_filter( 'mc4wp_debug_log_level', function() { return 'debug'; } );
 
+
+function pd_get_excerpt_from_content($postid){
+	$post = get_post($postid);
+
+	$this_excerpt = get_the_excerpt($post->ID);
+
+	if(empty($this_excerpt)) {
+		$this_excerpt = strip_shortcodes($post->post_content);
+		$this_excerpt = strip_tags($this_excerpt);
+		$this_excerpt = substr($this_excerpt, 0, 200);
+		$this_excerpt .= '...';
+	}
+
+	return $this_excerpt;
+}
+
 ?>
